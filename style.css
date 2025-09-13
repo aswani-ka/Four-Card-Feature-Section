@@ -1,0 +1,158 @@
+:root {
+
+    --ff-sans:"Poppins", sans-serif;
+
+    --fw-light:200;
+    --fw-regular:400;
+    --fw-bold:600;
+
+    --fs-400:0.9375rem;
+    --fs-500:1.25rem;
+    --fs-600:1.625rem;
+    --fs-900:2.5rem;
+
+    --clr-primary-red:hsl(0, 78%, 62%);
+    --clr-primary-cyan:hsl(180, 62%, 55%);
+    --clr-primary-orange:hsl(34, 97%, 64%);
+    --clr-primary-blue:hsl(212, 86%, 64%);
+
+
+    --clr-neutral-grey500: hsl(234, 12%, 34%);
+    --clr-neutral-grey400: hsl(212, 6%, 44%);
+    --clr-neutral-white: hsl(0, 0%, 100%);
+
+
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+html {
+    font-family: var(--ff-sans);
+    font-weight: var(--fw-regular);
+    line-height: 1.7rem;
+}
+
+body {
+    margin: 0;
+    color: var(--clr-neutral-grey400);
+    /* padding-block-end: 7rem; */
+}
+
+h1 {
+    line-height: 3rem;
+    color: var(--clr-neutral-grey500);
+    font-size: var(--fs-900);
+    font-weight: var(--fw-light);
+}
+
+h1 span {
+    font-weight: var(--fw-bold);
+}
+
+h2,
+h3 {
+    line-height: 1.2;
+    color: var(--clr-neutral-grey500);
+}
+
+
+.wrapper {
+    padding-inline: 2rem;
+    max-width: 1350px;
+    margin-inline: auto;
+}
+
+.narrow-wrapper {
+    max-width: 550px;
+}
+
+header {
+    text-align: center;
+    /* margin-block: 6rem; */
+}
+
+
+.layout-grid {
+    --gap:2rem;
+    margin-top: 2rem;
+    display: grid;
+    grid-auto-columns: 1fr;
+    gap: var(--gap);
+}
+
+
+@media (min-width:800px){
+    .layout-grid {
+        grid-template-areas: 
+            '... two ...'
+            'one two four'
+            'one three four'
+            '... three ...'
+        
+        ;
+    }
+    .layout-grid > :nth-child(1) {
+        grid-area: one;
+    }
+    .layout-grid > :nth-child(2) {
+        grid-area: two;
+    }
+    .layout-grid > :nth-child(3) {
+        grid-area: three;
+    }
+    .layout-grid > :nth-child(4) {
+        grid-area: four;
+    }
+
+}
+
+
+
+
+.card {
+    padding: 2rem;
+    border-top: 3px solid;
+    border-radius: .5rem;
+    box-shadow: 0 1rem 1.5rem -.5rem rgb(0 0 0/0.2);
+
+}
+
+.card__title {
+    font-size: var(--fs-600);
+    margin: 0;
+}
+
+.card__img {
+    display: block;
+    margin-left: auto;
+    margin-top: 2rem;
+}
+
+
+
+.border-cyan {
+    border-color: var(--clr-primary-cyan);
+}
+.border-red {
+    border-color: var(--clr-primary-red);
+}
+.border-orange {
+    border-color: var(--clr-primary-orange);
+}
+.border-blue {
+    border-color: var(--clr-primary-blue);
+}
+
+.attribution {
+    margin-top: 2rem;
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
